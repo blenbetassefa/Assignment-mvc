@@ -1,0 +1,92 @@
+﻿@model Book
+@{
+    ViewData["Title"] = "Book Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+
+    var photoPath = "~/images/" + (Model.BookImg ?? "no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
+}
+
+<h1>Book Details</h1><br /><br />
+
+<div>
+  
+    <h4>Book</h4>
+    <hr />
+    <dl class="row">
+
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookId)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookId)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookTitle)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookTitle)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookCategory)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookCategory)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookAuthor)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookAuthor)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookPublisher)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookPublisher)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookIsbn)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookIsbn)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookCopyright)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookCopyright)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookDateAdded)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookDateAdded)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookStatus)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.BookStatus)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.BookImg)
+        </dt>
+        <dd class="cl">
+            <img src="@photoPath" asp-append-version="true" border-radius: 8px; />
+                 
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Index" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <a asp-action="Edit" asp-route-id="@Model.BookTblId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+</div>
+ <style>
+            .img{
+             
+            }
+            .cl{
+              margin-left:800px;
+              margin-top:-370px;
+            }
+        </style>

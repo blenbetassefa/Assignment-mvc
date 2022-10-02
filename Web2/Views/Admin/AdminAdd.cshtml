@@ -1,0 +1,88 @@
+﻿@model Web2.Models.Admin
+
+@{
+    ViewData["Title"] = "AdminAdd";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .hh{
+       align="center"
+         position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: 12px;
+
+    }
+</style>
+
+<h1>AdminAdd</h1>
+
+<h4>Admin</h4>
+<hr />
+<div class="row hh">
+    <div class="col-md-4">
+        <form asp-action="AdminAdd2">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="AdminUserName" class="control-label"></label>
+                <input asp-for="AdminUserName" class="form-control" />
+                <span asp-validation-for="AdminUserName" class="text-danger"> 
+                    @if (TempData["AccountAlreadyExists"] != null)
+                     {
+                        <div class="alert alert-success alert-dismissable">
+                             <strong>@TempData["AccountAlreadyExists"]</strong>
+                        </div>
+                     }
+                </span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminName" class="control-label"></label>
+                <input asp-for="AdminName" class="form-control" />
+                <span asp-validation-for="AdminName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminGender" class="control-label"></label>
+                <input asp-for="AdminGender" class="form-control" />
+                <span asp-validation-for="AdminGender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminJoinedDate" class="control-label"></label>
+                <input asp-for="AdminJoinedDate" class="form-control" />
+                <span asp-validation-for="AdminJoinedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminPhone" class="control-label"></label>
+                <input asp-for="AdminPhone" class="form-control" />
+                <span asp-validation-for="AdminPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminEmail" class="control-label"></label>
+                <input asp-for="AdminEmail" class="form-control" />
+                <span asp-validation-for="AdminEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="AdminDob" class="control-label"></label>
+                <input asp-for="AdminDob" class="form-control" />
+                <span asp-validation-for="AdminDob" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label for="Password" class="control-label">Password</label>
+                <input type="password" maxlength=60 name="Password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label for="ConfirmPassword" class="control-label">Confirm Password</label>
+                <input type="password" maxlength=60 name="ConfirmPassword" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+    <a asp-action="ManageAdministrators" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Back</a>
+
+</div>
+
+<div>
+    <a asp-action="ManageAdministrators">Back to List</a>
+</div>
+

@@ -1,0 +1,32 @@
+﻿
+@{
+    ViewData["Title"] = "Create New Administrator";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Enter the new Account's Password</h1>
+    @using (Html.BeginForm("CreateNewAdminAccount2", "Account", FormMethod.Post))
+    {
+        <table cellpadding="5">
+            <tr>
+                <td>Username:</td>
+                <td><input type="text" name="Username" value="@ViewBag.AccountUsername" readonly></td>
+            </tr>
+            <tr>
+                <td>Account Type:</td>
+                <td><input type="text" name="AccountType" value="@ViewBag.AccountType" readonly></td>
+            </tr>
+            <tr>
+                <td>Password:</td>
+                <td><input type="Password" name="Password"/></td>
+            </tr>
+            <tr>
+                <td>Confirm Password:</td>
+                <td><input type="Password" name="ConfirmPassword"/></td>
+            </tr>
+        </table>
+        <br />
+        @ViewBag.Error
+        <br/>
+        <input type="submit" value="Submit"/>
+    }

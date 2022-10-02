@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Web2.Models.Book>
+
+@{
+    ViewData["Title"] = "Manage Books";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+  
+
+}
+<h1>Manage Books</h1><br /><br />
+
+
+<a asp-action="AddBook" class="btn btn-primary"><i class="fa-solid fa-book"></i> Add Book</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookCategory)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookAuthor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookImg)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            var photoPath = "~/images/" + (item.BookImg ?? "no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple");
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookId)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookTitle)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookCategory)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookAuthor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.BookStatus)
+                </td>
+                <td>
+                    <img src="@photoPath" class="card-img-top card-img-custom" asp-append-version="true" width="190px" height="100px"  />
+                </td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.BookTblId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                    <a asp-action="Details" asp-route-id="@item.BookTblId" class="btn btn-success"><i class="fa-solid fa-circle-info"></i></a>
+                    <a asp-action="Delete" asp-route-id="@item.BookTblId" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+</table>

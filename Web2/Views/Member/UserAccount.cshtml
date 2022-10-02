@@ -1,0 +1,75 @@
+﻿@model Web2.Models.Member
+
+@{
+    ViewData["Title"] = "UserAccount";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+<style>
+    .hh{
+       align="center"
+         position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: 12px;
+
+    }
+</style>
+
+<h1>User Accounts</h1><br /><br />
+
+<div class="hh">
+    <h4>Member</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MemberUserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MemberUserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MemberName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MemberName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MemberGender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MemberGender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MemberJoinedDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MemberJoinedDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MemberPhone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MemberPhone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MemberEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MemberEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.MemberDob)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.MemberDob)
+        </dd>
+    </dl>
+</div>
+<div>
+  <form id="myForm" action="/Member/ProfileEdit" method="Post">
+    <input type="hidden" name="id" value="@Model.MemberId" />
+    <input type="submit" value="Edit" class="btn btn-primary" /><a asp-action="ChangePassword" class="btn btn-success">Change Password</i></a>
+
+</form>
+
+</div>

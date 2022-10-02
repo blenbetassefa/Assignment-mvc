@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Web2.Models.Admin>
+
+@{
+    ViewData["Title"] = "Manage Administrators";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<h1>Manage Administrators</h1><br /><br />
+
+
+<a asp-action="AdminCreate" class="btn btn-primary"><i class="fa-solid"></i> New Administrator Account</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminJoinedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminJoinedDate)
+            </td>
+            <td>
+                <a asp-action="AdminEdit" asp-route-id="@item.AdminId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a asp-action="AdminDetails" asp-route-id="@item.AdminId" class="btn btn-success"><i class="fa-solid fa-circle-info"></i></a>
+                <a asp-action="AdminDelete" asp-route-id="@item.AdminId" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

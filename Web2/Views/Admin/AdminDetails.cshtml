@@ -1,0 +1,70 @@
+﻿@model Web2.Models.Admin
+
+@{
+    ViewData["Title"] = "Administrator Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+<style>
+    .hh{
+    align="center"
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: 12px;
+
+    }
+</style>
+
+<h1>Administrator Details</h1><br /><br />
+
+<div class="hh">
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdminUserName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdminUserName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdminName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdminName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdminGender)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdminGender)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdminJoinedDate)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdminJoinedDate)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdminPhone)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdminPhone)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdminEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdminEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.AdminDob)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.AdminDob)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="ManageAdministrators" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Back</a>
+    <a asp-action="AdminEdit" asp-route-id="@Model.AdminId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+</div>

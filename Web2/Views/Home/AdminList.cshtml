@@ -1,0 +1,74 @@
+﻿@model IEnumerable<Web2.Models.Admin>
+
+@{
+    ViewData["Title"] = "AdminList";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h1>AdminList</h1>
+
+<p>
+    @{
+        //<a asp-action="Create">Create New</a>
+    }
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminJoinedDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminPhone)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AdminDob)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminJoinedDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminPhone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AdminDob)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.AdminId">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.AdminId">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.AdminId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

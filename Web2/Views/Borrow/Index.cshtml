@@ -1,0 +1,51 @@
+﻿@model IEnumerable<Web2.Models.Book>
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<style>
+    .row{
+        margin-top:70px;
+    }
+</style>
+<div class="row">
+    @foreach (var item in Model)
+    {
+        var photoPath = "~/images/" + (item.BookImg ?? "no-photo-or-blank-image-icon-loading-images-or-missing-image-mark-image-not-available-or-image-coming-soon-sign-simple-nature-silhouette-in-frame-isolated-illustration-vector.jpg");
+        <div class="col-3">
+            <div class="card my-2 store-card">
+                <a class="a-cleanup" asp-controller="Store" asp-action="Details" asp-route-id="@item.BookTblId">
+                    <img src="@photoPath" class="card-img-top card-img-custom" asp-append-version="true">
+                    <div class="card-body" style="height: 6em;">
+                        <h5 class="mb-3">@item.BookTitle</h5>
+                    </div>
+                    <div class="card-body">
+                        <span class="card-text">@item.BookTitle</span>
+                          <span class="card-text">@item.BookCategory</span>
+                        <span class="card-text">@item.BookAuthor</span>
+                            <span class="card-text">@item.BookPublisher</span>
+                        <span class="card-text">@item.BookIsbn</span>
+                        <span class="card-text">@item.BookCopyright</span>
+                        <span class="card-text">@item.BookDateAdded</span>
+                        <span class="card-text">@item.BookStatus</span>
+
+                    </div>
+                </a>
+            </div>
+
+    <a> @Html.ActionLink("Requested", "Requested", "Borrow", null, new { @class = "nav-item btn-sm btn-primary text-light", style = "text-decoration:none;" })</a>
+
+
+
+
+
+
+
+
+
+             
+        </div>
+    }
+</div>

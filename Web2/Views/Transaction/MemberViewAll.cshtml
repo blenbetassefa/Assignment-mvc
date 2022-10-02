@@ -1,0 +1,59 @@
+﻿@model IEnumerable<Web2.Models.Transaction>
+
+@{
+    ViewData["Title"] = "View Transaction";
+    Layout = "~/Views/Shared/_LayoutUser.cshtml";
+}
+
+<h1>View Transaction</h1><br /><br />
+
+<h4>
+    <a asp-action="MemberViewAll">View All Transactions</a> | 
+    <a asp-action="MemberViewNew">View New Transactions</a> | 
+    <a asp-action="MemberViewUnreturned">View Unreturned Transactions</a> | 
+    <a asp-action="MemberViewRejected">View Rejected Transactions</a> | 
+    <a asp-action="MemberViewReturned">View Returned Transactions</a>
+</h4>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.BookId)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookTitle)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.BookIsbn)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TranStatus)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TranDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookTitle)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.BookIsbn)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TranStatus)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.TranDate)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

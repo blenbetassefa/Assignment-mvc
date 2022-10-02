@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Web2.Models.Member>
+
+@{
+    ViewData["Title"] = "Manage Members";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h1>Manage Members</h1><br /><br />
+
+<a asp-action="MemberCreate" class="btn btn-primary"><i class="fa-solid"></i>Create New Member Account</a>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberUserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MemberJoinedDate)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberUserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.MemberJoinedDate)
+            </td>
+            <td>
+                <a asp-action="MemberEdit" asp-route-id="@item.MemberId" class="btn btn-primary"><i class="fa-solid fa-pen-to-square"></i></a>
+                <a asp-action="MemberDetails" asp-route-id="@item.MemberId" class="btn btn-success"><i class="fa-solid fa-circle-info"></i></a>
+                <a asp-action="MemberDelete" asp-route-id="@item.MemberId" class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

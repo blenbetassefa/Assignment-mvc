@@ -1,0 +1,86 @@
+﻿@model Web2.Models.NonDatabaseModels.NewMember
+
+@{
+    ViewData["Title"] = "Member Account Create";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<style>
+    .hh{
+       align="center"
+         position: fixed;
+    left: 50%;
+    top: 50%;
+    margin: 12px;
+
+    }
+</style>
+
+<h1>Create New Member Account</h1><br /><br />
+
+<hr />
+<div class="row hh">
+    <div class="col-md-4">
+        <form asp-action="MemberCreate2">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="MemberUserName" class="control-label"></label>
+                <input asp-for="MemberUserName" class="form-control" />
+                <span asp-validation-for="MemberUserName" class="text-danger"></span>
+                <label class="field-validation-error">@Html.DisplayFor(model => model.AccountExistsErrorMessage) </label>
+
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberName" class="control-label"></label>
+                <input asp-for="MemberName" class="form-control" />
+                <span asp-validation-for="MemberName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberGender" class="control-label"></label>
+                <input asp-for="MemberGender" class="form-control" />
+                <span asp-validation-for="MemberGender" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberJoinedDate" class="control-label"></label>
+                <input asp-for="MemberJoinedDate" value="@DateTime.Now" class="form-control" />
+                <span asp-validation-for="MemberJoinedDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberPhone" class="control-label"></label>
+                <input asp-for="MemberPhone" class="form-control" />
+                <span asp-validation-for="MemberPhone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberEmail" class="control-label"></label>
+                <input asp-for="MemberEmail" class="form-control" />
+                <span asp-validation-for="MemberEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MemberDob" class="control-label"></label>
+                <input asp-for="MemberDob" class="form-control" />
+                <span asp-validation-for="MemberDob" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="ConfirmPassword" class="control-label"></label>
+                <input asp-for="ConfirmPassword" class="form-control" />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="field-validation-error">@Html.DisplayFor(model => model.ErrorMessage) </label>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="ManageMembers" class="btn btn-warning"><i class="fa-solid fa-arrow-left"></i> Back</a>
+</div>
+

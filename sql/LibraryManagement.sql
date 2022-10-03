@@ -57,26 +57,10 @@ MemberID int,
 MemberName varchar(60)
 )
 go
-insert into Admins values ('LUA/1245/45','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
-insert into Accounts values('LUA/1245/45','Librarian ','passcode')
+insert into Admins values ('blen','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
+insert into Accounts values('blen','Librarian','passcode')
 
-insert into Admins values ('LUA/1246/46','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
-insert into Accounts values('LUA/1246/46','Librarian ','passcode')
 
-insert into Admins values ('LUA/1247/47','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
-insert into Accounts values('LUA/1247/47','Administrator ','passcode')
+insert into Members values ('blen12','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
+insert into Accounts values('blen12','Memeber','passcode')
 
-insert into Admins values ('LUA/1248/48','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
-insert into Accounts values('LUA/1248/48','Administrator ','passcode')
-
-insert into Members values ('MBS/1245/45','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
-insert into Accounts values('MBS/1245/45','Librarian ','passcode')
-
-insert into Members values ('MBS/1246/46','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
-insert into Accounts values('MBS/1246/46','Librarian ','passcode')
-
-insert into Members values ('MBS/1247/47','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
-insert into Accounts values('MBS/1247/47','Administrator ','passcode')
-
-insert into Members values ('MBS/1248/48','Amanuel Dereje','Male',GETDATE(),'09112234567','aman.dereje@gmail.com',Getdate())
-insert into Accounts values('MBS/1248/48','Administrator ','passcode')

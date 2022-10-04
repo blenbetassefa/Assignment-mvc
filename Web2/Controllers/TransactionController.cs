@@ -17,10 +17,10 @@ namespace Web2.Controllers
 
         private readonly ITransaction _service;
         private readonly LibContext _context;
-        public TransactionController(ITransaction service)
+        public TransactionController(ITransaction service,LibContext libContext)
         {
             _service = service;
-            _context = new LibContext();
+            _context = libContext;
 
         }
 

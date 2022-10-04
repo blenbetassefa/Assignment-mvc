@@ -44,6 +44,7 @@ BookISBN varchar(30),
 BookCopyright varchar(30),
 BookDateAdded date,
 BookStatus varchar(20)
+BookImg  varchar(80)
 )
 
 create table Transactions(
